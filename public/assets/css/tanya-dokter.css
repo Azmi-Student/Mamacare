@@ -1,0 +1,172 @@
+.tanya-dokter-box {
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    margin-bottom: 24px;
+    width: 50%;
+    min-height: 90vh;
+    /* ✅ lebih pendek dari layar, gak bikin scroll */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+.tanya-dokter-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tanya-dokter-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: #ff3ea5;
+    margin: 0;
+}
+
+.btn-kembali {
+    background-color: #ff3ea5;
+    color: #fff;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.btn-kembali:hover {
+    background-color: #e73397;
+    /* lebih gelap dikit waktu hover */
+}
+
+.tanya-dokter-line {
+    width: 100px;
+    height: 8px;
+    background-color: #ff3ea5;
+    border-radius: 20px;
+    margin: 16px 0 20px 0;
+}
+
+.doctor-list {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.doctor-item {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    border-bottom: 1px solid #f0f0f0;
+    background-color: #ffffff;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.doctor-item:hover {
+    background-color: #f8f8f8;
+}
+
+.doctor-item.active {
+    background-color: #ff3ea5;
+    color: white;
+}
+
+.doctor-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.doctor-info {
+    flex: 1;
+}
+
+.doctor-name {
+    font-size: 16px;
+    font-weight: 600;
+    color: #ff3ea5;
+    margin: 0;
+}
+
+.doctor-description {
+    font-size: 12px;
+    color: #7d7d7d;
+    margin: 5px 0;
+}
+
+.doctor-time {
+    font-size: 14px;
+    color: #ff3ea5;
+    margin-right: 10px;
+}
+
+.chat-panel {
+    display: none; /* Awalnya disembunyikan */
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 40%;
+    height: 100%;
+    background-color: #ffffff;
+    border-left: 2px solid #ff3ea5;
+    box-shadow: -4px 0 10px rgba(0, 0, 0, 0.1);
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 16px;
+    z-index: 9999;
+}
+
+.chat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#doctor-name {
+    font-size: 18px;
+    font-weight: 600;
+    color: #ff3ea5;
+}
+
+.close-chat-btn {
+    background-color: #ff3ea5;
+    color: #fff;
+    border: none;
+    padding: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.chat-body {
+    flex: 1;
+    margin: 16px 0;
+    overflow-y: auto;
+    max-height: 80%;
+}
+
+.chat-input {
+    display: flex;
+    gap: 10px;
+}
+
+#chat-message {
+    width: 80%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+#send-message {
+    background-color: #ff3ea5;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+}

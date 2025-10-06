@@ -1,0 +1,78 @@
+/* FOOTER */
+.container footer {
+    padding: 0 5%;
+    padding-bottom: 7%;
+    background-color: #FF3EA5;
+    color: #FAFAFA;
+    display: flex;
+    position: relative;
+    z-index: 5;
+}
+
+/* FOOTER KIRI */
+.container footer .footer-kiri {
+    width: 40%;
+    margin-right: 5%;
+}
+.container footer .footer-logo {
+    display: flex;
+    margin-bottom: 20px;
+}
+.container footer .footer-logo .logo-img {
+    width: 2.3em;
+    height: 2.3em;
+    margin-right: 8%;
+}
+.container footer .footer-logo .logo-img img {
+    position: relative;
+    bottom: 35%;
+    width: 3.5em;
+}
+.container footer .footer-logo .logo-tag h2 {
+    font-size: 2.3em;
+    font-weight: 700;
+}
+.container footer .footer-kiri p {
+    line-height: 1.5em;
+}
+
+/* FOOTER TENGAH */
+.container footer .footer-tengah {
+    width: 30%;
+    margin-right: 5%;
+    padding-top: 15px;
+}
+.container footer .footer-tengah h3 {
+    font-size: 1.5em;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.container footer .footer-tengah .footer-menu {
+    display: flex;
+    justify-content: space-between;
+}
+.container footer .footer-tengah .footer-menu a {
+    text-decoration: none;
+    line-height: 1.8em;
+    color: #FAFAFA;
+}
+
+/* FOOTER KANAN */
+.container footer .footer-kanan {
+    padding-top: 15px;
+    width: 20%;
+}
+.container footer .footer-kanan h3 {
+    font-size: 1.5em;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.container footer .footer-kanan .sosmed {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+.container footer .footer-kanan .sosmed img {
+    width: 45px;
+}

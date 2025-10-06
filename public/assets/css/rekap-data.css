@@ -1,0 +1,276 @@
+/* === Layout Box === */
+.rekap-data-box {
+    background: linear-gradient(145deg, #ffffff, #f9f9fb);
+    border-radius: 20px;
+    padding: 28px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    margin-bottom: 24px;
+    width: 100%;
+    min-height: 90vh;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+/* === Header === */
+.rekap-data-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.rekap-data-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: #FF3EA5;
+    margin: 0;
+    letter-spacing: 0.5px;
+}
+
+/* === Buttons === */
+.btn-kembali,
+.btn-detail,
+.btn-print-pdf {
+    background: linear-gradient(135deg, #FF3EA5, #ff6ac1);
+    color: #fff;
+    border: none;
+    padding: 10px 22px;
+    border-radius: 12px;
+    font-size: 15px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(255, 62, 165, 0.3);
+}
+
+.btn-kembali:hover,
+.btn-detail:hover,
+.btn-print-pdf:hover {
+    background: linear-gradient(135deg, #e73397, #ff4aa9);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(231, 51, 151, 0.4);
+}
+
+/* === Divider Line === */
+.rekap-data-line {
+    width: 120px;
+    height: 6px;
+    background: linear-gradient(90deg, #FF3EA5, #ff6ac1);
+    border-radius: 20px;
+    margin: 18px 0 24px 0;
+}
+
+/* === Filter Box === */
+.filter-box {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 22px;
+}
+
+.jenis-check-up,
+.search-check-up {
+    padding: 10px 15px;
+    font-size: 14px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    background: #fff;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.jenis-check-up:focus,
+.search-check-up:focus {
+    border-color: #FF3EA5;
+    box-shadow: 0 0 8px rgba(255, 62, 165, 0.3);
+    outline: none;
+}
+
+/* === Rekap List === */
+.rekap-data-list {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+/* === Rekap Item === */
+.rekap-item {
+    background: #fff;
+    border-radius: 14px;
+    padding: 20px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.rekap-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+/* === Rekap Header === */
+.rekap-item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fafafa;
+    padding: 12px 16px;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.rekap-item-header:hover {
+    background: #f0f0f5;
+}
+
+/* === Rekap Table === */
+.rekap-item-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 12px;
+    font-size: 14px;
+}
+
+.rekap-item-table td {
+    padding: 10px 12px;
+    border: 1px solid #eee;
+    text-align: left;
+}
+
+.rekap-item-table td:first-child {
+    font-weight: 600;
+    color: #444;
+    width: 180px;
+}
+
+/* === Detail Section === */
+.rekap-item-details {
+    padding: 15px;
+    margin-top: 12px;
+    background: #fdfdfd;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    display: none;
+    animation: fadeIn 0.3s ease;
+}
+
+/* === Printable Section === */
+.rekap-item-printable {
+    padding: 20px;
+    margin-top: 20px;
+    background-color: #f9f9f9;
+    border-radius: 12px;
+}
+
+.rekap-item-printable table {
+    width: 100%;
+    margin-bottom: 20px;
+    border-collapse: collapse;
+}
+
+.rekap-item-printable table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.rekap-item-printable img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    border-radius: 8px;
+}
+
+/* === Images === */
+.rekap-item-images {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 12px;
+}
+
+.image-container {
+    text-align: center;
+}
+
+.image-description {
+    font-size: 13px;
+    color: #666;
+    margin-top: 6px;
+}
+
+.rekap-item-images img {
+    width: 120px;
+    height: auto;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.rekap-item-images img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+}
+
+/* === SweetAlert Custom === */
+.swal2-popup {
+    font-family: 'Poppins', sans-serif;
+    max-width: 600px;
+    text-align: center;
+    border-radius: 16px;
+    padding: 24px;
+}
+
+.swal2-title {
+    font-size: 24px;
+    color: #FF3EA5;
+    font-weight: 700;
+}
+
+.swal2-html-container {
+    font-size: 16px;
+    color: #555;
+    margin-top: 10px;
+}
+
+.swal2-confirm,
+.swal2-cancel {
+    background: linear-gradient(135deg, #FF3EA5, #ff6ac1);
+    color: white;
+    font-size: 16px;
+    padding: 10px 30px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.swal2-confirm:hover,
+.swal2-cancel:hover {
+    background: linear-gradient(135deg, #e73397, #ff4aa9);
+    transform: translateY(-2px);
+}
+
+/* === Animation === */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+    .rekap-data-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .filter-box {
+        flex-direction: column;
+    }
+
+    .rekap-item-table td:first-child {
+        width: 120px;
+    }
+}

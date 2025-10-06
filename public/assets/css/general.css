@@ -1,0 +1,70 @@
+/* GENERAL CSS */
+body {
+    overflow-x: hidden;
+    font-family: "Poppins", "sans-serif";
+    /* background-color: #FF3EA5; */
+    background-color: grey;
+    scroll-behavior: smooth;
+}
+body::-webkit-scrollbar {
+    display: none;
+}
+
+/* POLA WAVE */
+.wave1 {
+    z-index: 2;
+    width: 100%;
+    position: relative;
+    margin-top: -170px;
+    margin-bottom: -3px;
+}
+.wave2 {
+    z-index: 2;
+    width: 100%;
+    position: relative;
+    margin-top: -200px;
+    margin-bottom: -10px;
+}
+.wave3 {
+    width: 100%;
+    position: relative;
+    margin-top: -175px;
+    margin-bottom: -5px;
+}
+.wave4, .wave6 {
+    z-index: 2;
+    width: 100%;
+    position: relative;
+    margin-top: -155px;
+    margin-bottom: -5px;
+}
+.wave5 {
+    z-index: 2;
+    width: 100%;
+    position: relative;
+    margin-top: -170px;
+    margin-bottom: -5px;
+}
+
+
+/* POLA GARIS LURUS */
+.container .line-bg {
+    height: 2px;
+    background-color: #FAFAFA;
+}
+.container .line-bg .line {
+    height: 2px;
+    margin: 0 5%;
+    background-color: #FF3EA5;
+    position: relative;
+    z-index: 3;
+}
+.container .line2-bg {
+    height: 2px;
+    background-color: #FF3EA5;
+}
+.container .line2-bg .line2 {
+    height: 2px;
+    margin: 0% 5%;
+    background-color: #FAFAFA;
+}

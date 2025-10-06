@@ -1,0 +1,111 @@
+/* FORM REGIST LANDING PAGE */
+/* FORM */
+.container .form-lp {
+    padding: 7% 10%;
+    height: 37vh;
+    color: #FAFAFA;
+    background-color: #FF3EA5;
+    justify-items: center;
+}
+.container .form-lp h2{
+    margin-bottom: 5%;
+    /* text-align: center; */
+    font-size: 1.5em;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+.container .form-lp .form{
+    width: 40%;
+    height: 20%;
+    background-color: #FF3EA5;
+    margin-bottom: 2%;
+    justify-items: center;
+    border-radius: 10px;
+    border: 2px solid #FAFAFA;
+}
+.container .form-lp .form form input {
+    width: 400px;
+    height: 32px;
+    border-radius: 8px;
+    margin-top: 3px;
+    border: transparent;
+    color: #FF3EA5;
+    font-weight: 600;
+    font-size: 1.2em;
+    /* padding-left: 2%; */
+}
+.container .form-lp .form form input::placeholder {
+    color: #FF3EA5;
+    padding-left: 2%;
+}
+
+.container .form-lp .btn-form { /* BUTTON GET STARTED FORM SECTION */
+    display: flex;
+    position: relative;
+    width: 125px;
+}
+.container .form-lp .btn-form button {
+    color: #FF0099;
+    font-weight: 600;
+    font-size: 1.0em;
+    background-color: #FAFAFA;
+    border-color: transparent;
+    border-radius: 5px;
+    width: 125px;
+    height: 35px;
+    z-index: 3;
+    position: absolute;
+}
+.container .form-lp .btn-form .btn-bg-form {
+    background-color: #FF0099;
+    border: 2px solid #FAFAFA;
+    border-radius: 6px;
+    width: 124px;
+    height: 34px;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    z-index: 2;
+}
+
+
+.container .form-lp .form-img1 {
+    width: 0px;
+    height: 0px;
+}
+.container .form-lp .form-img1 img {
+    width: 95px;
+    position: relative;
+    right: 95vh;
+    bottom: 2vh;
+}
+.container .form-lp .form-img2 {
+    width: 0px;
+    height: 0px;
+}
+.container .form-lp .form-img2 img {
+    width: 130px;
+    position: relative;
+    right: 83vh;
+    bottom: 17vh;
+}
+.container .form-lp .form-img3 {
+    width: 0px;
+    height: 0px;
+}
+.container .form-lp .form-img3 img {
+    width: 120px;
+    position: relative;
+    right: 67vh;
+    top: 2vh;
+}
+.container .form-lp .form-img4 {
+    width: 0px;
+    height: 0px;
+}
+.container .form-lp .form-img4 img {
+    width: 370px;
+    position: relative;
+    left: 40vh;
+    bottom: 23vh;
+}

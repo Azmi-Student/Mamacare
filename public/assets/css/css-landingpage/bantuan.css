@@ -1,0 +1,85 @@
+/* BANTUAN STYLE */
+.container .bantuan {
+    height: 51vh;
+    display: flex;
+    padding: 7% 10%;
+    justify-content: space-between;
+    color: #FAFAFA;
+    background-color: #FF3EA5;
+}
+
+/* BANTUAN KANAN */
+.container .bantuan .bantuan-kiri {
+    width: 45%;
+    margin-right: 5%;
+}
+.container .bantuan .bantuan-kiri .bantuan-img1 {
+    left: 2vw;
+    width: 30vw;
+    bottom: 5vh;
+    position: relative;
+}
+.container .bantuan .bantuan-kiri .bantuan-img2 {
+    z-index: 3;
+    transform: rotate(-13deg);
+    width: 25vh;
+    position: relative;
+    bottom: 55vh;
+    left: 2.5vw;
+}
+.container .bantuan .bantuan-kiri .bantuan-img3 {
+    width: 25vh;
+    position: relative;
+    bottom: 65vh;
+    left: 9vw;
+    z-index: 3;
+}
+
+/* BANTUAN KIRI */
+.container .bantuan .bantuan-kanan {
+    width: 50%;
+    text-align: justify;
+}
+.container .bantuan .bantuan-kanan h3 {
+    font-size: 1.3em;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+.container .bantuan .bantuan-kanan p {
+    line-height: 1.3em;
+    margin-bottom: 20px;
+    /* color: #FAFAFA; */
+}
+
+.container .bantuan .bantuan-kanan .btn1 {/* BUTTON MANUAL BOOK BANTUAN SECTION */
+    height: 40px;
+    margin-bottom: 10px;
+}
+.container .bantuan .bantuan-kanan .btn1 .btn-manual-book { 
+    display: flex;
+    position: relative;
+    width: 145px;
+}
+.container .bantuan .bantuan-kanan .btn1 .btn-manual-book button {
+    color: #FF0099;
+    font-weight: 600;
+    font-size: 1.0em;
+    background-color: #FAFAFA;
+    border-color: transparent;
+    border-radius: 5px;
+    width: 145px;
+    height: 35px;
+    z-index: 3;
+    position: absolute;
+}
+.container .bantuan .bantuan-kanan .btn1 .btn-manual-book .btn-bg-mb {
+    background-color: #FF0099;
+    border: 2px solid #FAFAFA;
+    border-radius: 6px;
+    width: 144px;
+    height: 34px;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    z-index: 2;
+}

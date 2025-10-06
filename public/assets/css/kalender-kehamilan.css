@@ -1,0 +1,428 @@
+.pregnancy-box {
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    margin-bottom: 24px;
+    width: 50%;
+    min-height: 90vh;
+    /* ✅ lebih pendek dari layar, gak bikin scroll */
+    box-sizing: border-box;
+}
+
+.center-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.kalender-kehamilan-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.kalender-kehamilan-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: #FF3EA5;
+    margin: 0;
+}
+
+.btn-kembali {
+    background-color: #FF3EA5;
+    color: #fff;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.btn-kembali:hover {
+    background-color: #e73397;
+    /* lebih gelap dikit waktu hover */
+}
+
+.kalender-kehamilan-line {
+    width: 100px;
+    height: 8px;
+    background-color: #FF3EA5;
+    border-radius: 20px;
+    margin: 16px 0 20px 0;
+}
+
+.kalender-kehamilan-card {
+    background-color: #fff;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    margin-top: 20px;
+  }
+
+  .kalender-kehamilan-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .kalender-kehamilan-card-header h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #FF3EA5;
+  }
+
+  .tanggal-kehamilan {
+    margin: 4px 0 0 0;
+    font-size: 13px;
+    color: #888;
+  }
+
+  .edit-icon {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+  }
+
+  .divider-line {
+    border: none;
+    border-top: 1px solid #F3D4E3;
+    margin: 16px 0;
+  }
+
+  .kalender-kehamilan-card-body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .left-info h2.angka-besar {
+    color: #FF3EA5;
+    margin: 0;
+  }
+
+  .left-info p,
+  .right-info p {
+    margin: 4px 0 0 0;
+    font-size: 14px;
+    color: #777;
+  }
+
+  .right-info h3 {
+    margin: 0;
+    color: #FF3EA5;
+    text-align: right;
+  }
+
+  .progress-label {
+    margin-top: 12px;
+    font-weight: 600;
+    color: #FF3EA5;
+  }
+
+  .progress-wrapper {
+    margin-bottom: 16px;
+  }
+
+  .progress-bar {
+    position: relative;
+    height: 24px;
+    background-color: #fff;
+    border: 2px solid #FF3EA5;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 6px;
+  }
+
+  .progress-fill {
+    background-color: #FFE5F0;
+    height: 100%;
+    border-radius: 20px;
+    width: 0%;
+    transition: width 0.3s ease;
+  }
+
+  .progress-icon {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: -2px;
+    left: 0;
+    transition: left 0.3s ease;
+    pointer-events: none;
+  }
+
+  .progress-slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 24px;
+    opacity: 0; /* slider tak terlihat */
+    cursor: pointer;
+  }
+
+
+  .progress-text {
+    font-size: 13px;
+    color: #FF3EA5;
+    margin-top: 6px;
+    text-align: right;
+  }
+
+  .kalender-kehamilan-deskripsi {
+    margin-top: 16px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #666;
+  }
+
+/* =========================
+   KALENDER KEHAMILAN — RESPONSIVE
+   ========================= */
+
+/* ===== Desktop/Laptop (1024–1440px) ===== */
+@media screen and (min-width:1024px) and (max-width:1440px){
+  .main-wrapper{display:flex;min-height:100vh;}
+  .left-panel{width:18%;position:fixed;top:0;left:0;height:100vh;box-sizing:border-box;}
+  .right-panel{margin-left:18%;width:calc(100% - 18%);box-sizing:border-box;overflow-x:hidden;}
+
+  .center-wrapper{padding:16px 0;}
+  .pregnancy-box{
+    width:60%;                    /* dari 50% -> 60% agar lega */
+    min-height:85vh;              /* sedikit lebih pendek dari layar */
+    padding:20px;
+  }
+
+  .kalender-kehamilan-title{font-size:22px;}
+  .btn-kembali{font-size:14px;padding:6px 16px;}
+  .kalender-kehamilan-line{margin:12px 0 16px 0;}
+
+  .kalender-kehamilan-card{padding:16px;margin-top:16px;}
+  .kalender-kehamilan-card-header h3{font-size:16px}
+  .tanggal-kehamilan{font-size:12px}
+  .edit-icon{width:18px;height:18px}
+
+  .kalender-kehamilan-card-body{gap:16px}
+  .left-info h2.angka-besar{font-size:28px}
+  .left-info p,.right-info p{font-size:13px}
+  .right-info h3{font-size:16px;text-align:left}
+
+  .progress-label{font-size:14px}
+  .progress-bar{height:20px}
+  .progress-icon{width:20px;height:20px;top:-2px}
+  .progress-text{font-size:12px;margin-top:4px}
+
+  .kalender-kehamilan-deskripsi{font-size:13px}
+}
+
+/* ===== Tablet (768–1023px) ===== */
+@media screen and (min-width:768px) and (max-width:1023px){
+  /* layout */
+  .main-wrapper{display:block;}
+  .left-panel{width:28%;position:fixed;top:0;left:0;height:100vh;}
+  .right-panel{
+    margin-left:28%;
+    width:calc(100% - 28%);
+    box-sizing:border-box;
+    overflow-x:hidden;
+    border-top-left-radius:16px;border-bottom-left-radius:16px;
+    padding:20px;
+  }
+  .center-wrapper{padding:16px 0;}
+
+  /* konten */
+  .pregnancy-box{
+    width:70%;              /* lebih lebar supaya nyaman dibaca */
+    min-height:80vh;
+    padding:20px;
+  }
+
+  .kalender-kehamilan-header{gap:12px}
+  .kalender-kehamilan-title{font-size:20px}
+  .btn-kembali{font-size:14px;padding:6px 14px}
+  .kalender-kehamilan-line{width:90px;height:6px;margin:10px 0 14px}
+
+  .kalender-kehamilan-card{padding:16px;margin-top:14px}
+  .kalender-kehamilan-card-header h3{font-size:16px}
+  .tanggal-kehamilan{font-size:12px}
+
+  /* body: 2 kolom jadi “semi-stack” */
+  .kalender-kehamilan-card-body{
+    gap:14px;
+    align-items:flex-start;
+  }
+  .left-info h2.angka-besar{font-size:26px}
+  .left-info p,.right-info p{font-size:13px}
+  .right-info h3{font-size:15px;text-align:left}
+
+  .progress-label{font-size:14px}
+  .progress-bar{height:20px}
+  .progress-icon{width:20px;height:20px;top:-2px}
+  .progress-text{font-size:12px}
+
+  .kalender-kehamilan-deskripsi{font-size:13px;line-height:1.55}
+}
+
+/* ===== Mobile (≤767px) ===== */
+@media screen and (max-width:767px){
+  /* layout utama ditumpuk */
+  .main-wrapper{display:block;min-height:auto;background:linear-gradient(180deg,#FBE7F2,#FFEFF8);}
+  .left-panel{
+    position:static;width:100%;height:auto;z-index:1;padding-top:12px;
+    background:#FAFAFA;border-bottom:1px solid rgba(0,0,0,.05);
+  }
+  .right-panel{margin-left:0;border-radius:0;padding:16px;background:#FBE7F2;}
+
+  .center-wrapper{padding:0;margin:0;}
+
+  .pregnancy-box{
+    width:100%;
+    min-height:auto;
+    padding:16px;
+    border-radius:14px;
+  }
+
+  .kalender-kehamilan-header{gap:10px;flex-wrap:wrap}
+  .kalender-kehamilan-title{font-size:18px}
+  .btn-kembali{font-size:13px;padding:6px 12px;border-radius:7px}
+  .kalender-kehamilan-line{width:80px;height:6px;margin:8px 0 12px}
+
+  .kalender-kehamilan-card{padding:14px;margin-top:12px;border-radius:14px}
+  .kalender-kehamilan-card-header{gap:10px}
+  .kalender-kehamilan-card-header h3{font-size:15px}
+  .tanggal-kehamilan{font-size:12px}
+
+  /* body: full stack */
+  .kalender-kehamilan-card-body{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:10px;
+  }
+  .left-info h2.angka-besar{font-size:22px}
+  .left-info p,.right-info p{font-size:13px}
+  .right-info h3{font-size:15px;text-align:left}
+
+  /* progress */
+  .progress-label{font-size:14px;margin-top:10px}
+  .progress-bar{height:18px;border-width:2px;border-radius:14px}
+  .progress-fill{border-radius:14px}
+  .progress-icon{width:18px;height:18px;top:-1px}
+  .progress-slider{height:18px}
+  .progress-text{font-size:12px;text-align:left;margin-top:6px}
+
+  .kalender-kehamilan-deskripsi{font-size:13px;line-height:1.55}
+}
+
+/* ===== Kecilkan Flatpickr & SweetAlert di layar kecil (opsional) ===== */
+@media (max-width:480px){
+  .swal2-popup{width:min(92vw,420px)!important;padding:14px!important}
+  .swal2-title{font-size:18px!important}
+  .swal2-html-container{font-size:14px!important}
+}
+
+/* ===== Anti overflow halus ===== */
+html,body{overflow-x:hidden;}
+/* ====== Header mungil di atas konten ====== */
+.page-bar{
+  display:flex; align-items:center; gap:10px;
+  margin: 10px 0 12px;
+}
+.page-title{
+  font-size:16px; font-weight:600; color:#FF3EA5; margin:0;
+}
+
+/* ====== Tombol hamburger default: disembunyikan (non-mobile) ====== */
+.sidebar-toggle{
+  display:none;
+  align-items:center; justify-content:center;
+  width:44px; height:44px; cursor:pointer; background:transparent; border:0; box-shadow:none;
+}
+.sidebar-toggle span{
+  display:block; width:22px; height:2px; background:#333; border-radius:2px; margin:0 0 5px 0;
+}
+.sidebar-toggle span:last-child{ margin-bottom:0; }
+
+/* Overlay (klik utk menutup) */
+.sidebar-overlay{
+  display:none; position:fixed; inset:0; background:rgba(0,0,0,.35);
+  z-index:4; opacity:0; transition:opacity .25s ease;
+}
+.sidebar-overlay.show{ display:block; opacity:1; }
+
+/* ====== MOBILE (≤767px): tampilkan toggle + jadikan sidebar drawer ====== */
+@media (max-width: 767px){
+  .sidebar-toggle{ display:inline-flex; }
+
+  /* Sidebar jadi off-canvas */
+  .left-panel{
+    position:fixed; top:0; left:0; height:100vh;
+    width:78%; max-width:320px; transform:translateX(-100%);
+    transition:transform .28s ease; z-index:5; background:#FAFAFA;
+  }
+  .left-panel.open{ transform:translateX(0); box-shadow:2px 0 18px rgba(0,0,0,.08); }
+  body.no-scroll{ overflow:hidden; }
+
+  /* Rapikan header & judul */
+  .page-bar{ margin-top:8px; }
+  .page-title{ font-size:15px; }
+}
+
+/* ====== TABLET (768–1023px): toggle juga muncul ====== */
+@media (min-width:768px) and (max-width:1023px){
+  .sidebar-toggle{ display:inline-flex; }
+  .left-panel{
+    position:fixed; top:0; left:0; height:100vh;
+    width:28%; max-width:none; transform:translateX(-100%);
+    transition:transform .28s ease; background:#FAFAFA; z-index:5;
+  }
+  .left-panel.open{ transform:translateX(0); box-shadow:2px 0 18px rgba(0,0,0,.08); }
+  body.no-scroll{ overflow:hidden; }
+}
+
+/* ====== DESKTOP (≥1024px): sembunyikan toggle, sidebar fixed biasa ====== */
+@media (min-width:1024px){
+  .sidebar-toggle{ display:none !important; }
+  .sidebar-overlay{ display:none !important; }
+  .left-panel{ transform:none !important; box-shadow:none !important; }
+}
+@media (max-width:767px){
+  .pregnancy-box{ padding:16px; }
+  .kalender-kehamilan-card{ padding:14px; }
+  .progress-bar{ height:18px; }
+  .progress-icon{ width:18px; height:18px; top:-1px; }
+}
+@media (min-width:768px) and (max-width:1023px){
+  .sidebar-toggle{ display: none !important; }
+  .left-panel{
+    position: fixed;
+    top: 0; left: 0;
+    width: 28%;
+    height: 100vh;
+    transform: none !important;
+    box-shadow: none;
+    z-index: 2;
+  }
+  .right-panel{
+    margin-left: 28%;
+    width: calc(100% - 28%);
+  }
+}
+.swal-responsive {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  text-align: left;
+  font-size: 15px;
+  max-height: 70vh;
+  overflow-y: auto;
+}
+.swal-responsive > div {
+  flex: 1 1 280px; /* min lebar 280px, biar turun kalau layar sempit */
+}
+@media (max-width: 600px) {
+  .swal-responsive {
+    flex-direction: column;
+  }
+}

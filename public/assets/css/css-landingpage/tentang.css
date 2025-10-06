@@ -1,0 +1,64 @@
+.container .tentang {
+    display: flex;
+    padding: 3% 10% 7% 10%;
+    background-color: #FAFAFA;
+}
+/* MENU */
+.container .tentang .menu {
+    order: 1;
+    width: 25%;
+    z-index: 4;
+    /* margin-right: 5%; */
+    position: relative;
+}
+.container .tentang .menu h4 {
+    font-size: 1.3em;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #FF3EA5;
+}
+.container .tentang .menu a {
+    font-size: 0.9em;
+    font-weight: 500;
+    line-height: 1.5em;
+    text-decoration: none;
+    color: #FF3EA5;
+}
+
+/* KONTEN TENTANG KIRI */
+.container .tentang .konten-kanan {
+    order: 2;
+    width: 75%;
+    line-height: 1.3em;
+    text-align: justify;
+}
+.container .tentang .konten-kanan .konten {
+    display: none;
+}
+.container .tentang .konten-kanan .konten.aktif {
+    display: block;
+}
+
+
+.container .tentang .pola1 {
+    width: 0px;
+    height: 0px;
+}
+.container .tentang .pola1 img {
+    width: 90vh;
+    position: relative;
+    right: 130px;
+    bottom: 100px;
+    z-index: 2;
+}
+.container .tentang .love-spin1 {
+    width: 0px;
+    height: 0px;
+}
+.container .tentang .love-spin1 img {
+    width: 85vh;
+    position: relative;
+    right: 400px;
+    bottom: 100px;
+    z-index: 4;
+}

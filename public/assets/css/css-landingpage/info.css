@@ -1,0 +1,63 @@
+/* INFO STYLE */
+/* KONTAK */
+.container .info {
+    padding: 7% 10%;
+    background-color: #FF3EA5;
+    padding-bottom: 15%;
+}
+/* HEADER KONTAK */
+.container .info .header {
+    text-align: center;
+}
+.container .info .header h2 {
+    font-size: 1.5em;
+    font-weight: 700;
+    color: #FAFAFA;
+    margin-bottom: 15px;
+}
+.container .info .header p {
+    line-height: 1.5em;
+    color: #FAFAFA;
+}
+
+/* KONTEN KANAN */
+.container .info .konten-info {
+    padding: 4% 0%;
+}
+.container .info .konten-info {
+    justify-content: space-between;
+    display: flex;
+    max-width: 100%;
+    flex-wrap: wrap;
+}
+.container .info .konten-info .info {
+    padding: 2%;
+    width: 28%;
+    border: 2px solid #FF3EA5;
+    background-color: #FAFAFA;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    align-content: center;
+    z-index: 3;
+}
+.container .info .konten-info .info .circular {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #FF3EA5;
+    border-radius: 20px;
+    margin: 0% 46%;
+    margin-bottom: 20px;
+}
+.container .info .konten-info .info h3 {
+    font-size: 1.1em;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 15px;
+    color: #FF3EA5;
+}
+.container .info .konten-info .info p {
+    font-size: 0.8em;
+    font-weight: 500;
+    text-align: center;
+    line-height: 1.2em;
+}

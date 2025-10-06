@@ -1,0 +1,238 @@
+/* ARTIKEL */
+.container .artikel-page {
+    padding: 0% 7% 7% 7%;
+    background-color: #FAFAFA;
+    padding-bottom: 20%;
+}
+
+.container .artikel-page .kotak {
+    display: flex;
+    height: 15vh;
+    margin-top: -8vh;
+}
+.container .artikel-page .kotak .kotak1 {
+    height: 10px;
+    width: 10px;
+}
+.container .artikel-page .kotak .kotak1 .decor1 {
+    width: 15vh;
+    position: relative;
+    bottom: 25px;
+    right: 2vh;
+}
+.container .artikel-page .kotak .kotak1 .decor2 {
+    width: 13vh;
+    position: relative;
+    bottom: 11px;
+    left: 7vh;
+}
+.container .artikel-page .kotak .kotak1 .decor3 {
+    width: 12vh;
+    position: relative;
+    bottom: 8.5px;
+    left: 17vh;
+}
+.container .artikel-page .kotak .kotak1 .decor4 {
+    width: 13vh;
+    position: relative;
+    bottom: 20px;
+    left: 26vh;
+}
+
+.container .artikel-page .kotak .kotak2 {
+    height: 10px;
+    width: 10px;
+    position: relative;
+    left: 87%;
+}
+.container .artikel-page .kotak .kotak2 .decor1 {
+    width: 13vh;
+    position: relative;
+    bottom: 49.1px;
+    right: 28vh;
+}
+.container .artikel-page .kotak .kotak2 .decor2 {
+    width: 14vh;
+    position: relative;
+    bottom: 59px;
+    right: 19vh;
+}
+.container .artikel-page .kotak .kotak2 .decor3 {
+    width: 13vh;
+    position: relative;
+    bottom: 58px;
+    right: 9vh;
+}
+.container .artikel-page .kotak .kotak2 .decor4 {
+    width: 13vh;
+    position: relative;
+    bottom: 49px;
+}
+
+/* HEADER ARTIKEL */
+.container .artikel-page .header {
+    text-align: center;
+    margin: 35px;
+}
+.container .artikel-page .header h2 {
+    font-size: 1.5em;
+    font-weight: 700;
+    color: #FF3EA5;
+    margin-bottom: 15px;
+}
+.container .artikel-page .header p {
+    line-height: 1.5em;
+}
+
+/* ARTIKEL */
+.container .artikel-page .artikel {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    width: 85vw;
+    height: 81vh;
+}
+.container .artikel-page .artikel .card {
+    background-color: #FAFAFA;
+    border: 2px solid #FF3EA5;
+    border-radius: 12px;
+    width: 30%;
+}
+
+/* IMG ARTIKEL */
+.container .artikel-page .artikel .card .img-card {
+    padding: 4% 4% 2% 4%;
+}
+.container .artikel-page .artikel .card .img-card img {
+    border: 2px solid #FF3EA5;
+    border-radius: 10px;
+    width: 99%;
+}
+
+/* TAG ARTIKEL */
+.container .artikel-page .artikel .card .tag {
+    display: flex;
+    background-color: #FF3EA5;
+    margin: 2% 4%;
+    border-radius: 20px;
+    height: 30px;
+    align-items: center;
+}
+.container .artikel-page .artikel .card .tag .dot-tag {
+    width: 8px;
+    height: 8px;
+    background-color: #FAFAFA;
+    border-radius: 10px;
+    margin-right: 5%;
+}
+.container .artikel-page .artikel .card .tag img {
+    width: 15px;
+    margin-right: 3%;
+}
+.container .artikel-page .artikel .card .tag p {
+    font-size: 1em;
+    color: #FAFAFA;
+}
+
+/* DESKRIPSI ARTIKEL */
+.container .artikel-page .artikel .card .deskripsi-artikel {
+    padding: 2% 4% 4% 4%;
+}
+.container .artikel-page .artikel .card .deskripsi-artikel h3 {
+    font-size: 1.1em;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 2%;
+    color: #FF3EA5;
+}
+.container .artikel-page .artikel .card .deskripsi-artikel p {
+    font-size: 0.9em;
+    text-align: center;
+    margin-bottom: 2%;
+}
+
+/* LINE DECORATION */
+.container .artikel-page .artikel .card .line {
+    height: 2px;
+    background-color: #FF3EA5;
+}
+
+/* TIMESTAMP ARTIKEL */
+.container .artikel-page .artikel .card .timestamp {
+    display: flex;
+    padding: 4%;
+    color: #FF3EA5;
+}
+.container .artikel-page .artikel .card .timestamp img {
+    width: 15px;
+    margin-right: 3%;
+}
+
+
+/* BUTTON SELENGKAPNYA */
+.container .artikel-page .btn-get-started {
+    width: 150px;
+    height: 35px;
+    font-size: 1em;
+    cursor: pointer;
+    font-weight: 600;
+    border-radius: 5px;
+    border-color: transparent;
+    color: #FAFAFA;
+    background-color: #FF3EA5;
+    position: relative;
+    left: 43%;
+}
+/* .container .artikel-page .btn-art {
+    height: 0px;
+    position: relative;
+    left: 41%;
+}
+.container .artikel-page .btn-art .btn-selengkapnya {
+    display: flex;
+    position: relative;
+    width: 145px;
+}
+.container .artikel-page .btn-art .btn-selengkapnya button {
+    color: #FAFAFA;
+    font-weight: 600;
+    font-size: 1.0em;
+    background-color: #FF0099;
+    border-color: transparent;
+    border-radius: 5px;
+    width: 145px;
+    height: 35px;
+    z-index: 3;
+    position: absolute;
+}
+.container .artikel-page .btn-art .btn-selengkapnya .btn-bg-art {
+    background-color: #FAFAFA;
+    border: 2px solid #FF0099;
+    border-radius: 6px;
+    width: 144px;
+    height: 34px;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    z-index: 2;
+} */
+
+/* DECORATION IMG BOTTON ARTIKEL */
+.container .artikel-page .artikel-img {
+    width: 0px;
+    height: 5px;
+    position: relative;
+}
+.container .artikel-page .artikel-img .img1 {
+    width: 45vh;
+    position: relative;
+    z-index: 2;
+    left: 145vh;
+    transform: scaleX(-1);
+}
+.container .artikel-page .artikel-img .img2 {
+    width: 6vh;
+    position: relative;
+    left: 152vh;
+    top: 11vh;
+}

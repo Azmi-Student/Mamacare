@@ -1,0 +1,119 @@
+/* LAYANAN STYLE */
+.container .layanan {
+    padding: 7% 10%;
+    /* height: 90vh; */
+    color: #FAFAFA;
+    background-color: #FF3EA5;
+}
+/* HEADER LAYANAN */
+.container .layanan .header {
+    text-align: center;
+    margin-bottom: 4%;
+}
+.container .layanan .header h2{
+    font-size: 1.5em;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+.container .layanan .header p {
+    line-height: 1.5em;
+}
+
+.container .layanan .konten {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+/* KONTEN KANAN */
+.container .layanan .konten .konten-kanan {
+    width: 60%;
+    margin-right: 5%;
+    margin-top: 7%;
+}
+.container .layanan .konten .konten-kanan .img-layanan1,
+.container .layanan .konten .konten-kanan .img-layanan2,
+.container .layanan .konten .konten-kanan .img-layanan3,
+.container .layanan .konten .konten-kanan .img-layanan4,
+.container .layanan .konten .konten-kanan .img-layanan5,
+.container .layanan .konten .konten-kanan .img-layanan6,
+.container .layanan .konten .konten-kanan .img-layanan7 {
+    width: 0px;
+    height: 0px;
+}
+.container .layanan .konten .konten-kanan .img-layanan1 img {
+    width: 28vw;
+    position: relative;
+    z-index: 6;
+    left: 5vw;
+}
+.container .layanan .konten .konten-kanan .img-layanan2 img {
+    width: 14vw;
+    position: relative;
+    z-index: 4;
+    bottom: 3vh;
+    left: 23vw;
+}
+.container .layanan .konten .konten-kanan .img-layanan3 img {
+    width: 13vw;
+    position: relative;
+    z-index: 4;
+    left: 11vw;
+    bottom: 13vh;
+}
+.container .layanan .konten .konten-kanan .img-layanan4 img {
+    width: 9vw;
+    position: relative;
+    z-index: 3;
+    left: 2vw;
+    bottom: 1vh;
+}
+.container .layanan .konten .konten-kanan .img-layanan5 img {
+    width: 5.5vw;
+    position: relative;
+    z-index: 5;
+    left: 24vw;
+    bottom: 4vh;
+}
+.container .layanan .konten .konten-kanan .img-layanan6 img {
+    width: 3.5vw;
+    position: relative;
+    z-index: 5;
+    top: 36vh;
+    left: 2.5vw;
+}
+.container .layanan .konten .konten-kanan .img-layanan7 img {
+    width: 29vw;
+    position: relative;
+    z-index: 5;
+    bottom: 17vh;
+    left: 2vw;
+    opacity: 0.5;
+}
+
+/* KONTEN KIRI */
+.container .layanan .konten .konten-kiri {
+    width: 65%;
+}
+.container .layanan .konten .konten-kiri .layanan-info {
+    display: flex;
+    margin-bottom: 20px;
+}
+.container .layanan .konten .konten-kiri .layanan-info .circular-check {
+    width: 25px;
+    height: 25px;
+    background-color: #FAFAFA;
+    border: 1px solid #000;
+    /* border-radius: 100%; */
+    margin-right: 20px;
+}
+.container .layanan .konten .konten-kiri .layanan-info .circular-check img {
+    width: 20px;
+}
+.container .layanan .konten .konten-kiri .layanan-info h3 {
+    font-size: 1.3em;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+.container .layanan .konten .konten-kiri .layanan-info p {
+    line-height: 1.3em;
+}

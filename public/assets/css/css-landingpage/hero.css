@@ -1,0 +1,130 @@
+/* HERO SECTION */
+.container .hero {
+    height: 40vw;
+    display: flex;
+    padding: 0% 10%;
+    position: relative;
+    align-items: center;
+    background-size: 80%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url('/images/hero-panel.svg');
+    color: #FAFAFA;
+    background-color: #FF3EA5;
+}
+/* TEXT HERO SECTION */
+.container .hero .text { 
+    bottom: 20px;
+    padding-left: 2%;
+    margin-right: 5%;
+    position: relative;
+    text-align: justify;
+}
+.container .hero .text h2 {
+    font-size: 2.5em;
+    font-weight: 700;
+    margin-bottom: 5%;
+    line-height: 1.2em;
+}
+.container .hero .text .btn-get-started {
+    width: 120px;
+    height: 35px;
+    font-size: 1em;
+    cursor: pointer;
+    font-weight: 600;
+    border-radius: 5px;
+    border-color: transparent;
+    color: #FF3EA5;
+    background-color: #FAFAFA;
+}
+/* MASKOT DOKTER HERO SECTION */
+.container .hero img {
+    width: 32%;
+    z-index: 1;
+    bottom: 7px;
+    position: relative;
+}
+.container .hero .text .hero-logo,
+.container .hero .text .btn-login,
+.container .hero .text .btn-regist {
+    display: none;
+}
+
+@media screen and (max-width: 1000px) {
+    .container .hero .text h2 {
+        font-size: 2.1em;
+    }
+}
+
+/* CSS RESPONSIVE TABLET (768) */
+@media screen and (max-width: 768px) {
+    .container .hero .text h2 {
+        font-size: 1.63em;
+    }
+    .container .hero .text .btn-get-started {
+        width: 100px;
+        height: 30px;
+        font-size: 0.8em;
+    }
+}
+
+/* CSS RESPONSIVE PHONE (576) */
+@media screen and (max-width: 576px) {
+    .container .hero {
+        height: 45vh;
+        background-size: 85%;
+        padding: 0 7%;
+    }
+    /* HERO - LOGO */
+    .container .hero .text .hero-logo {
+        width: 100%;
+        display: flex;
+    }
+    .container .hero .text .hero-logo .logo-spin {
+        width: 40px;
+        bottom: 7px;
+        position: relative;
+    }
+    .container .hero .text .hero-logo .logo-tag {
+        margin-left: 5%;
+        font-size: 1.8em;
+        font-weight: 700;
+        color: #FAFAFA;
+    }
+
+    .container .hero .text h2 {
+        font-size: 0.6em;
+        font-weight: 500;
+        line-height: 1.7em;
+    }
+    .container .hero .text .btn-get-started {
+        display: none;
+    }
+
+    .container .hero .text .btn-login,
+    .container .hero .text .btn-regist {
+        order: 2;
+        width: 30%;
+        height: 23px;
+        cursor: pointer;
+        display: inline;
+        font-size: 0.5em;
+        font-weight: 600;
+        border-radius: 5px;
+        border-color: transparent;
+    }
+    .container .hero .text .btn-login {
+        color: #FFFFFF;
+        background-color: #D10079;
+        margin-right: 2%;
+    }
+    .container .hero .text .btn-regist {
+        color: #FF3EA5;
+        background-color: #FAFAFA;
+    }
+
+    .container .hero .dokter {
+        top: 3px;
+        position: relative;
+    }
+}
