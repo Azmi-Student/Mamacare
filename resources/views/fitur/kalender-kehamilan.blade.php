@@ -26,17 +26,17 @@
         <div class="left-panel">
             <img src="{{ asset('assets/images/logo-mamacare-pink.png') }}" alt="MamaCare Logo" class="logo" />
 
-            <div class="sidebar-item active">
+            <div class="sidebar-item active" onclick="window.location.href='{{ url('/') }}'">
                 <img src="{{ asset('assets/images/icon-home-active.png') }}" alt="Home Icon" class="sidebar-icon" />
                 <span class="sidebar-text">Home</span>
             </div>
 
-            <div class="sidebar-item">
+            <div class="sidebar-item" onclick="window.location.href='{{ url('tanya-dokter') }}'">
                 <img src="{{ asset('assets/images/icon-pesan.png') }}" alt="Tanya Dokter Icon" class="sidebar-icon" />
                 <span class="sidebar-text">Tanya Dokter</span>
             </div>
 
-            <div class="sidebar-item">
+            <div class="sidebar-item" onclick="window.location.href='{{ url('pengaturan') }}'">
                 <img src="{{ asset('assets/images/icon-pengaturan.png') }}" alt="Pengaturan Icon"
                     class="sidebar-icon" />
                 <span class="sidebar-text">Pengaturan</span>
