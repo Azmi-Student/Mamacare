@@ -78,7 +78,7 @@
                             <h3>{{ $dokter->name }}</h3>
                             <p>Dokter spesialis kehamilan</p> {{-- deskripsi default --}}
                             <div class="dokter-actions">
-                                <button class="btn-outline">Tanya</button>
+                                <button class="btn-outline" onclick="window.location.href='{{ url('tanya-dokter') }}'">Tanya</button>
                                 <button class="btn-filled" onclick="showForm(event)">Reservasi</button>
                             </div>
                         </div>
