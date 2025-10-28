@@ -43,7 +43,8 @@
 
             <div class="sidebar-item active">
                 <img src="{{ asset('assets/images/icon-home-active.png') }}" alt="Home Icon" class="sidebar-icon" />
-                <span class="sidebar-text">Home</span>
+                <span class="sidebar-text">Rumah bos</span>
+
             </div>
 
             <a href="{{ url('/tanya-dokter') }}" class="sidebar-link">
