@@ -56,6 +56,7 @@ s0.parentNode.insertBefore(s1,s0);
             <div class="sidebar-item active">
                 <img src="{{ asset('assets/images/icon-home-active.png') }}" alt="Home Icon" class="sidebar-icon" />
                 <span class="sidebar-text">Home</span>
+
             </div>
 
             <a href="{{ url('/tanya-dokter') }}" class="sidebar-link">
