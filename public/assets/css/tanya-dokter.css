@@ -1,85 +1,157 @@
+/* =========================================
+   1. GLOBAL & RESET (Penting untuk Kerapihan)
+   ========================================= */
+
+/* Pastikan font input & button konsisten */
+input, button, textarea {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Custom Scrollbar (Chrome/Safari/Edge) */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f8f8f8; 
+}
+
+::-webkit-scrollbar-thumb {
+    background: #ffb7d5; /* Pink muda */
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #ff3ea5; /* Pink tua saat di-hover */
+}
+
+/* Hapus outline biru standar saat klik input */
+input:focus, textarea:focus {
+    outline: none !important;
+    border-color: #ff3ea5 !important;
+    box-shadow: 0 0 0 4px rgba(255, 62, 165, 0.1) !important;
+}
+
+/* =========================================
+   2. LAYOUT UTAMA & LIST DOKTER
+   ========================================= */
+
+/* Container Utama List Dokter */
 .tanya-dokter-box {
     background-color: #ffffff;
-    border-radius: 16px;
-    padding: 24px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    border-radius: 24px;
+    padding: 32px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
     margin-bottom: 24px;
-    width: 50%;
-    min-height: 90vh;
-    /* ✅ lebih pendek dari layar, gak bikin scroll */
+    width: 60%;
+    min-height: 80vh; 
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
+    border: 1px solid #f9f9f9;
 }
 
+/* Header Section */
 .tanya-dokter-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 15px;
 }
 
 .tanya-dokter-title {
-    font-size: 24px;
-    font-weight: 600;
-    color: #ff3ea5;
-    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: #333;
+    letter-spacing: -0.5px;
 }
 
+/* Tombol Kembali */
 .btn-kembali {
-    background-color: #ff3ea5;
-    color: #fff;
+    background-color: #fff0f6;
+    color: #ff3ea5;
     border: none;
-    padding: 8px 20px;
-    border-radius: 8px;
-    font-size: 16px;
+    padding: 10px 24px;
+    border-radius: 50px;
+    font-size: 14px;
     cursor: pointer;
-    font-weight: 500;
-    transition: background-color 0.3s ease;
+    font-weight: 600;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 .btn-kembali:hover {
-    background-color: #e73397;
-    /* lebih gelap dikit waktu hover */
-}
-
-.tanya-dokter-line {
-    width: 100px;
-    height: 8px;
     background-color: #ff3ea5;
-    border-radius: 20px;
-    margin: 16px 0 20px 0;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 62, 165, 0.3);
 }
 
+/* Garis Hiasan */
+.tanya-dokter-line {
+    width: 60px;
+    height: 6px;
+    background: linear-gradient(to right, #ff3ea5, #ff9dc6);
+    border-radius: 20px;
+    margin-bottom: 30px;
+}
+
+/* List Dokter Wrapper */
 .doctor-list {
     display: flex;
     flex-direction: column;
-    margin-top: 20px;
+    gap: 16px;
+    overflow-y: auto;
+    padding-right: 8px; /* Ruang untuk scrollbar */
+    padding-bottom: 10px;
 }
 
+/* Kartu Dokter (Item) */
 .doctor-item {
     display: flex;
     align-items: center;
-    padding: 12px;
-    border-bottom: 1px solid #f0f0f0;
+    padding: 16px;
+    border-radius: 18px;
     background-color: #ffffff;
-    transition: background-color 0.3s ease;
+    border: 1px solid #f0f0f0;
+    transition: all 0.2s ease;
     cursor: pointer;
+    position: relative;
 }
 
 .doctor-item:hover {
-    background-color: #f8f8f8;
+    border-color: #ff3ea5;
+    background-color: #fffcfd;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
 }
 
+/* Saat Dokter Dipilih */
 .doctor-item.active {
-    background-color: #ff3ea5;
+    background: linear-gradient(135deg, #ff3ea5, #ff5e9a);
+    border-color: transparent;
     color: white;
+    box-shadow: 0 8px 20px rgba(255, 62, 165, 0.3);
+}
+
+.doctor-item.active .doctor-name,
+.doctor-item.active .doctor-description,
+.doctor-item.active .doctor-time {
+    color: white !important;
+}
+
+.doctor-item.active .doctor-time {
+    background-color: rgba(255, 255, 255, 0.2); /* Transparan putih */
 }
 
 .doctor-avatar {
-    width: 50px;
-    height: 50px;
+    width: 56px;
+    height: 56px;
     border-radius: 50%;
-    margin-right: 15px;
+    margin-right: 18px;
+    object-fit: cover;
+    border: 2px solid #fff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
 }
 
 .doctor-info {
@@ -89,84 +161,291 @@
 .doctor-name {
     font-size: 16px;
     font-weight: 600;
-    color: #ff3ea5;
+    color: #333;
     margin: 0;
 }
 
 .doctor-description {
-    font-size: 12px;
-    color: #7d7d7d;
-    margin: 5px 0;
+    font-size: 13px;
+    color: #888;
+    margin: 4px 0 0 0;
 }
 
 .doctor-time {
-    font-size: 14px;
-    color: #ff3ea5;
-    margin-right: 10px;
+    font-size: 12px;
+    font-weight: 600;
+    background-color: #f7f7f7;
+    padding: 6px 12px;
+    border-radius: 12px;
+    color: #666;
 }
+
+
+/* =========================================
+   3. CHAT PANEL (Floating Widget Style)
+   ========================================= */
 
 .chat-panel {
-    display: none; /* Awalnya disembunyikan */
-    position: fixed;
-    right: 0;
-    top: 0;
-    width: 40%;
-    height: 100%;
-    background-color: #ffffff;
-    border-left: 2px solid #ff3ea5;
-    box-shadow: -4px 0 10px rgba(0, 0, 0, 0.1);
+    display: none; /* Hidden default */
     flex-direction: column;
-    box-sizing: border-box;
-    padding: 16px;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 380px;
+    height: 600px;
+    background-color: #ffffff;
+    border-radius: 24px;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
     z-index: 9999;
+    border: 1px solid rgba(0,0,0,0.04);
+    animation: slideInUp 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
+@keyframes slideInUp {
+    from { transform: translateY(60px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* Header Chat */
 .chat-header {
+    background: linear-gradient(135deg, #ff3ea5, #ff7eb3);
+    padding: 18px 24px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    color: white;
+    box-shadow: 0 4px 15px rgba(255, 62, 165, 0.2);
+    z-index: 10;
 }
 
 #doctor-name {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 600;
-    color: #ff3ea5;
+    margin: 0;
+    color: white;
+    letter-spacing: 0.3px;
 }
 
 .close-chat-btn {
-    background-color: #ff3ea5;
+    background: rgba(255,255,255,0.2);
     color: #fff;
     border: none;
-    padding: 8px;
-    font-size: 16px;
-    cursor: pointer;
+    width: 32px;
+    height: 32px;
     border-radius: 50%;
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
 }
 
+.close-chat-btn:hover {
+    background: rgba(255,255,255,0.35);
+}
+
+/* Body Chat */
 .chat-body {
     flex: 1;
-    margin: 16px 0;
+    padding: 20px;
+    background-color: #f4f6f9;
+    background-image: radial-gradient(#e0e0e0 1px, transparent 1px); /* Pattern titik halus */
+    background-size: 20px 20px;
     overflow-y: auto;
-    max-height: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    scroll-behavior: smooth;
 }
 
+/* BUBBLE CHAT STYLES */
+.chat-message {
+    max-width: 75%;
+    padding: 12px 18px;
+    border-radius: 18px;
+    font-size: 14px;
+    line-height: 1.5;
+    position: relative;
+    word-wrap: break-word;
+    /* Animasi Pop saat muncul */
+    animation: fadeIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+}
+
+/* Pesan dari USER */
+.chat-message.is-me {
+    align-self: flex-end;
+    background: linear-gradient(135deg, #ff3ea5, #ff6bb0);
+    color: white;
+    border-bottom-right-radius: 4px;
+    box-shadow: 0 4px 10px rgba(255, 62, 165, 0.2);
+}
+
+/* Pesan dari DOKTER */
+.chat-message.is-doctor {
+    align-self: flex-start;
+    background-color: #ffffff;
+    color: #444;
+    border-bottom-left-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+/* Animasi dengan efek Scale */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px) scale(0.95); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* Area Input Bawah */
 .chat-input {
+    padding: 15px 20px;
+    background: white;
+    border-top: 1px solid #eee;
     display: flex;
-    gap: 10px;
+    align-items: center;
+    gap: 12px;
 }
 
 #chat-message {
-    width: 80%;
-    padding: 10px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
+    flex: 1;
+    padding: 14px 20px;
+    border-radius: 30px;
+    border: 1px solid #e0e0e0;
+    outline: none;
+    background-color: #f9f9f9;
+    font-size: 14px;
+    transition: all 0.3s;
+    width: auto;
+}
+
+#chat-message:focus {
+    background-color: #fff;
+    border-color: #ff3ea5;
 }
 
 #send-message {
     background-color: #ff3ea5;
     color: white;
     border: none;
-    padding: 10px;
-    border-radius: 8px;
+    padding: 12px 24px;
+    border-radius: 30px;
     cursor: pointer;
+    font-weight: 600;
+    transition: transform 0.2s, background 0.2s;
+    box-shadow: 0 4px 15px rgba(255, 62, 165, 0.3);
+}
+
+#send-message:hover {
+    background-color: #e02d8e;
+    transform: translateY(-2px);
+}
+
+#send-message:active {
+    transform: scale(0.95);
+}
+
+
+/* =========================================
+   4. MEDIA QUERIES (Mobile Responsive)
+   ========================================= */
+
+@media screen and (max-width: 768px) {
+
+    .main-wrapper {
+        flex-direction: column;
+        padding-bottom: 60px;
+    }
+
+    .left-panel {
+        display: none; 
+    }
+
+    .right-panel {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .tanya-dokter-box {
+        width: 100%;
+        padding: 20px;
+        margin-bottom: 80px;
+        border-radius: 16px;
+    }
+
+    .tanya-dokter-header {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .tanya-dokter-title {
+        font-size: 22px;
+    }
+
+    .btn-kembali {
+        padding: 8px 16px;
+        font-size: 12px;
+    }
+
+    /* --- Chat Layout Mobile --- */
+    .chat-panel {
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: 0;
+        border: none;
+        z-index: 99999;
+        display: none; /* Flex diatur oleh JS saat open */
+        flex-direction: column; /* Pastikan kolom */
+    }
+
+    /* Header Sticky agar tidak hilang saat scroll chat */
+    .chat-header {
+        padding: 15px;
+        position: sticky;
+        top: 0;
+    }
+    
+    .chat-header p {
+        font-size: 15px;
+    }
+
+    /* Body Chat */
+    .chat-body {
+        padding: 15px;
+        flex: 1; /* Ambil sisa ruang */
+        overflow-y: auto; /* Scrollable area */
+    }
+
+    /* Input Area Sticky di Bawah */
+    .chat-input {
+        padding: 12px;
+        position: sticky;
+        bottom: 0;
+        background: white;
+        /* Padding extra untuk iPhone X ke atas (Home Bar) */
+        padding-bottom: calc(12px + env(safe-area-inset-bottom));
+    }
+    
+    .chat-input input {
+        font-size: 16px; /* Cegah zoom auto di iOS */
+    }
+
+    /* List Dokter Compact */
+    .doctor-item {
+        padding: 12px;
+    }
+
+    .doctor-avatar {
+        width: 48px;
+        height: 48px;
+        margin-right: 12px;
+    }
+
+    .doctor-name {
+        font-size: 15px;
+    }
 }

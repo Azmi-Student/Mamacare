@@ -59,32 +59,34 @@
     <div class="main-wrapper">
 
         <div class="left-panel">
-            <img src="{{ asset('assets/images/logo-mamacare-pink.png') }}" alt="MamaCare Logo" class="logo" />
+    <img src="{{ asset('assets/images/logo-mamacare-pink.png') }}" alt="MamaCare Logo" class="logo" />
 
-            <div class="sidebar-item active">
-                <img src="{{ asset('assets/images/icon-home-active.png') }}" alt="Home Icon" class="sidebar-icon" />
-                <span class="sidebar-text">Dashboard</span>
-            </div>
+    <div class="sidebar-item active">
+        <img src="{{ asset('assets/images/icon-home-active.png') }}" alt="Home Icon" class="sidebar-icon" />
+        <span class="sidebar-text">Dashboard</span>
+    </div>
 
-            <div class="sidebar-item">
-                <a href="{{ route('dokter.daftar-reservasi') }}" class="sidebar-link">
-                    <img src="{{ asset('assets/images/icon-pesan.png') }}" alt="Manajemen Reservasi Icon"
-                        class="sidebar-icon" />
-                    <span class="sidebar-text">Daftar <br> Reservasi</span>
-                </a>
-            </div>
+    <div class="sidebar-item">
+        <a href="{{ route('dokter.daftar-reservasi') }}" class="sidebar-link">
+            <img src="{{ asset('assets/images/icon-pesan.png') }}" alt="Manajemen Reservasi Icon" class="sidebar-icon" />
+            <span class="sidebar-text">Daftar <br> Reservasi</span>
+        </a>
+    </div>
 
+    <div class="sidebar-item">
+        <a href="{{ route('dokter.chat') }}" class="sidebar-link">
+            <img src="{{ asset('assets/images/icon-chat-pasien.png') }}" onerror="this.src='{{ asset('assets/images/icon-pesan.png') }}'" alt="Chat Icon" class="sidebar-icon" />
+            <span class="sidebar-text">Chat Pasien</span>
+        </a>
+    </div>
 
-
-            <div class="sidebar-item">
-                <a href="{{ route('dokter.pengaturan') }}" class="sidebar-link"><img
-                        src="{{ asset('assets/images/icon-pengaturan.png') }}" alt="Pengaturan Icon"
-                        class="sidebar-icon" />
-                    <span class="sidebar-text">Pengaturan</span> </a>
-
-
-            </div>
-        </div>
+    <div class="sidebar-item">
+        <a href="{{ route('dokter.pengaturan') }}" class="sidebar-link">
+            <img src="{{ asset('assets/images/icon-pengaturan.png') }}" alt="Pengaturan Icon" class="sidebar-icon" />
+            <span class="sidebar-text">Pengaturan</span> 
+        </a>
+    </div>
+</div>
 
         <div class="right-panel">
            <!-- Sidebar Toggle Button (hanya untuk mobile) -->

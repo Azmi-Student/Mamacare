@@ -11,8 +11,24 @@ use App\Http\Controllers\DokterController;
 use App\Models\User;
 use App\Http\Controllers\DonasiController;
 use App\Http\Controllers\ChatController;
+use App\Http\Controllers\DokterChatController; // <--- Jangan lupa import ini di paling atas
+use App\Http\Controllers\MamaAiController;
 
-Route::post('/chat/store/{dokterId}', [ChatController::class, 'store']);
+Route::post('/chat-ai', [MamaAiController::class, 'chat'])->name('chat.ai');
+Route::middleware(['auth'])->group(function () {
+    
+    // Halaman Tanya Dokter
+    Route::get('/tanya-dokter', function () {
+        $dokters = \App\Models\User::where('role', 'dokter')->get();
+        return view('fitur.tanya-dokter', compact('dokters'));
+    });
+
+    // API Kirim Pesan
+    Route::post('/chat/store/{dokterId}', [ChatController::class, 'store'])->name('chat.store');
+    
+    // API Ambil Pesan (Route Baru)
+    Route::get('/chat/get/{dokterId}', [ChatController::class, 'getMessages'])->name('chat.get');
+});
 
 // Token transaksi Snap
 Route::middleware('auth')->post('/donasi/token', [DonasiController::class, 'getToken']);
@@ -31,7 +47,6 @@ Route::get('/', function () {
 })->middleware('auth')->name('home');
 
 
-// Authentication Routes
 // Authentication Routes
 Route::get('/register', [AuthController::class, 'showRegister'])->name('register');
 Route::post('/register', [AuthController::class, 'register']);
@@ -54,15 +69,10 @@ Route::middleware('auth')->group(function () {
     return view('fitur.pengaturan');
 })->name('fitur.pengaturan');
 
+Route::get('/mama-ai', function () {
+        return view('fitur.mama-ai');
+    })->name('mama.ai');
     Route::middleware('auth')->get('/rekap-data', [ReservasiController::class, 'rekapDataCheckup']);
-
-    Route::get('/tanya-dokter', function () {
-        // Mengambil data dokter yang terdaftar dengan role 'dokter'
-        $dokters = User::where('role', 'dokter')->get();  // Query untuk mengambil data dokter
-
-        // Mengirimkan data dokter ke view tanya-dokter
-        return view('fitur.tanya-dokter', compact('dokters'));
-    });
 
     Route::get('/reservasi-dokter', function () {
         $dokters = User::where('role', 'dokter')->get(); // Fetch doctors
@@ -95,20 +105,34 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
 
 // Dokter Routes (with dokter middleware)
 Route::middleware(['auth', 'dokter'])->prefix('dokter')->group(function () {
+    
+    // --- DASHBOARD & RESERVASI ---
     Route::get('/', [DokterController::class, 'index'])->name('dokter.dashboard');
     Route::get('/daftar-reservasi', [DokterController::class, 'daftarReservasi'])->name('dokter.daftar-reservasi');
     Route::post('/reservasi/{id}/status', [DokterController::class, 'updateStatus'])->name('dokter.updateStatus');
     Route::post('/reservasi/{id}/hasil-checkup', [DokterController::class, 'updateHasilCheckup'])->name('dokter.updateHasilCheckup');
     Route::get('/reservasi/{id}/get-hasil-checkup', [DokterController::class, 'getHasilCheckup'])->name('dokter.getHasilCheckup');
-    Route::get('/reservasi/{id}/get-hasil-checkup', [DokterController::class, 'getHasilCheckup'])->name('dokter.getHasilCheckup');
-    Route::delete('/dokter/reservasi/{id}', [DokterController::class, 'destroy'])
-    ->name('dokter.reservasi.destroy');
+    Route::delete('/dokter/reservasi/{id}', [DokterController::class, 'destroy'])->name('dokter.reservasi.destroy');
 
-    // Tambahkan rute pengaturan akun untuk dokter
+    // --- PENGATURAN ---
     Route::get('/pengaturan', function () {
-        return view('dokter.pengaturan');  // Pastikan ada view 'dokter.pengaturan' untuk halaman pengaturan
+        return view('dokter.pengaturan'); 
     })->name('dokter.pengaturan');
 
-    // Update profile untuk dokter
     Route::put('/profile', [DokterController::class, 'update'])->name('dokter.profile.update');
+
+
+    // ===================================================
+    //  FITUR CHAT DOKTER (Tambahan Baru)
+    // ===================================================
+    
+    // 1. Halaman Utama Chat (View)
+    Route::get('/chat', [DokterChatController::class, 'index'])->name('dokter.chat');
+
+    // 2. API: Ambil Riwayat Pesan (Load Chat)
+    Route::get('/chat/get/{pasienId}', [DokterChatController::class, 'getMessages'])->name('dokter.chat.get');
+
+    // 3. API: Kirim Pesan Balasan (Reply)
+    Route::post('/chat/store/{pasienId}', [DokterChatController::class, 'store'])->name('dokter.chat.store');
+
 });

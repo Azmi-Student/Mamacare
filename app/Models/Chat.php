@@ -10,19 +10,22 @@ class Chat extends Model
     use HasFactory;
 
     protected $fillable = [
-        'user_id', 'dokter_id', 'message'
+        'user_id',      // ID Pasien
+        'dokter_id',    // ID Dokter
+        'sender_id',    // ID Pengirim (Bisa Pasien atau Dokter)
+        'message',      // Isi Pesan
+        'is_read'       // Status Terbaca (Opsional)
     ];
 
-    // Relasi dengan model User
+    // Relasi ke User (Pasien)
     public function user()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, 'user_id');
     }
 
-    // Relasi dengan model User (dokter)
+    // Relasi ke User (Dokter)
     public function dokter()
     {
         return $this->belongsTo(User::class, 'dokter_id');
     }
 }
-
