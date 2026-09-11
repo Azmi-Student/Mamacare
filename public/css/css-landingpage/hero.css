@@ -1,0 +1,172 @@
+/* =================================
+   HERO SECTION GENERAL (DESKTOP)
+   ================================== */
+.hero {
+    min-height: 80vh;
+    display: flex;
+    padding: 0 10%;
+    position: relative;
+    align-items: center;
+    background-color: #FF3EA5;
+    background-image: url('/images/hero-panel.svg');
+    background-size: cover;
+    background-position: center;
+    color: #FAFAFA;
+    overflow: hidden;
+}
+
+/* --- EFEK GELAS KACA BERJALAN (BARU) --- */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%; /* Mulai dari luar layar kiri */
+    width: 50%;  /* Lebar kilatan cahaya */
+    height: 100%;
+    
+    /* Membuat gradasi transparan - Putih - transparan */
+    background: linear-gradient(
+        to right, 
+        rgba(255, 255, 255, 0) 0%, 
+        rgba(255, 255, 255, 0.3) 50%, 
+        rgba(255, 255, 255, 0) 100%
+    );
+    
+    /* Miringkan cahaya supaya terlihat artistik */
+    transform: skewX(-25deg);
+    
+    /* Letakkan di bawah teks (z-index 2) tapi di atas background */
+    z-index: 1; 
+    
+    /* Jalankan animasi */
+    animation: shine 4s infinite; /* Berulang setiap 4 detik */
+    pointer-events: none; /* Supaya tidak menghalangi klik tombol */
+}
+
+/* Definisi Gerakan Cahaya */
+@keyframes shine {
+    0% {
+        left: -100%;
+    }
+    50% {
+        left: 200%; /* Lewat sampai kanan layar */
+    }
+    100% {
+        left: 200%; /* Diam sebentar (pause) sebelum mulai lagi */
+    }
+}
+
+/* Pastikan Text tetap di atas cahaya */
+.hero .text { 
+    flex: 1;
+    position: relative; /* Penting */
+    z-index: 2; /* Supaya text tidak tertutup cahaya */
+}
+
+.hero .text h2 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+    line-height: 1.2;
+}
+
+/* Default Buttons */
+.hero .text .btn-get-started {
+    padding: 12px 30px;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: 600;
+    border-radius: 8px;
+    border: none;
+    color: #FF3EA5;
+    background-color: #FAFAFA;
+}
+
+/* Hidden by default in Desktop */
+.hero .text .hero-logo,
+.hero .text .btn-login,
+.hero .text .btn-regist {
+    display: none;
+}
+
+.hero .hero-image {
+    flex: 0.8;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.hero .dokter {
+    width: 100%;
+    max-width: 450px;
+}
+
+/* =================================
+   RESPONSIVE (TABLET & PHONE)
+   ================================== */
+
+@media screen and (max-width: 768px) {
+    .hero {
+        text-align: center;
+        padding: 60px 7%;
+        min-height: 60vh; /* Sesuaikan tinggi karena gambar hilang */
+    }
+
+    /* SEMBUNYIKAN GAMBAR DI MOBILE */
+    .hero .hero-image {
+        display: none;
+    }
+
+    .hero .text {
+        flex: 1;
+    }
+
+    .hero .text h2 {
+        font-size: 1.8rem;
+        margin-bottom: 30px;
+    }
+
+    /* HERO - LOGO (Muncul di Mobile) */
+    .hero .text .hero-logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 25px;
+    }
+
+    .hero .text .hero-logo img {
+        width: 50px;
+    }
+
+    .hero .text .hero-logo .logo-tag {
+        font-size: 1.8rem;
+        margin-left: 12px;
+        font-weight: 700;
+    }
+
+    /* SWITCH BUTTONS */
+    .hero .text .btn-get-started {
+        display: none;
+    }
+
+    .hero .text .btn-login,
+    .hero .text .btn-regist {
+        display: inline-block;
+        width: 45%;
+        padding: 12px 0;
+        font-size: 1rem;
+        font-weight: 600;
+        border-radius: 6px;
+        border: none;
+        margin: 5px;
+    }
+
+    .hero .text .btn-login {
+        color: #FFFFFF;
+        background-color: #D10079;
+    }
+
+    .hero .text .btn-regist {
+        color: #FF3EA5;
+        background-color: #FAFAFA;
+    }
+}

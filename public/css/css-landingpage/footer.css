@@ -1,0 +1,148 @@
+/* --- FOOTER BASE --- */
+footer {
+    background-color: #FF3EA5;
+    color: #FAFAFA;
+    padding: 70px 10% 30px 10%;
+    position: relative;
+    z-index: 10;
+}
+
+.footer-wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Supaya otomatis turun baris di mobile */
+    gap: 30px;
+}
+
+.footer-box {
+    flex: 1;
+    min-width: 250px; /* Mencegah kolom terlalu ciut */
+}
+
+/* BRANDING */
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.footer-logo img {
+    width: 45px;
+    height: auto;
+}
+
+.footer-logo h2 {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.school-name {
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.address {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+/* SITE MAP */
+.sitemap h3, .social h3 {
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.menu-container {
+    display: flex;
+    gap: 40px;
+}
+
+.footer-ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-ul li {
+    margin-bottom: 10px;
+}
+
+.footer-ul a {
+    text-decoration: none;
+    color: #FAFAFA;
+    font-size: 0.9rem;
+    opacity: 0.8;
+    transition: 0.3s;
+}
+
+.footer-ul a:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+
+/* SOSIAL MEDIA */
+.sosmed-list {
+    display: flex;
+    gap: 15px;
+}
+
+.sosmed-list img {
+    width: 40px;
+    transition: transform 0.3s ease;
+}
+
+.sosmed-list img:hover {
+    transform: scale(1.1);
+}
+
+/* COPYRIGHT */
+.footer-copy {
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: center;
+    font-size: 0.85rem;
+    opacity: 0.7;
+}
+
+/* --- RESPONSIVE MOBILE FIX --- */
+
+
+@media screen and (max-width: 768px) {
+    footer {
+        padding: 50px 7% 20px 7%;
+        text-align: center; /* Rata tengah semua di mobile */
+    }
+
+    .footer-wrapper {
+        flex-direction: column; /* Susun ke bawah satu-satu */
+        align-items: center;
+        gap: 40px;
+    }
+
+    .footer-box {
+        width: 100%; /* Ambil lebar penuh */
+    }
+
+    .footer-logo {
+        justify-content: center; /* Logo ke tengah */
+    }
+
+    .menu-container {
+        justify-content: center; /* Menu ke tengah */
+        gap: 20px;
+    }
+
+    .sosmed-list {
+        justify-content: center; /* Icon ke tengah */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .menu-container {
+        flex-direction: column; /* Menu tumpuk di HP kecil */
+        gap: 10px;
+    }
+}

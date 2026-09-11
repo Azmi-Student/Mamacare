@@ -1,0 +1,161 @@
+/* =================================
+   FORM LP SECTION
+   ================================== */
+.form-lp {
+    padding: 100px 10%;
+    background-color: #FF3EA5;
+    color: #FAFAFA;
+    position: relative; /* Wajib agar dekorasi tidak lari */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-height: 40vh;
+}
+
+.form-content {
+    z-index: 10; /* Agar di atas gambar */
+    width: 100%;
+    max-width: 500px;
+}
+
+.form-lp h2 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+/* INPUT BOX */
+.form-box {
+    background-color: #FAFAFA;
+    border: 2px solid #FAFAFA;
+    border-radius: 12px;
+    padding: 5px;
+    margin-bottom: 25px;
+    width: 100%;
+}
+
+.form-box input {
+    width: 100%;
+    height: 45px;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #FF3EA5;
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+.form-box input::placeholder {
+    color: #FF3EA5;
+    opacity: 0.7;
+}
+
+/* BUTTON CTA */
+.btn-form-group {
+    position: relative;
+    width: 150px;
+    height: 45px;
+    margin: 0 auto;
+}
+
+.btn-main {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #FAFAFA;
+    color: #FF0099;
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    z-index: 3;
+    transition: 0.2s;
+}
+
+.btn-bg-shadow {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 100%;
+    height: 100%;
+    background-color: #D10079;
+    border: 2px solid #FAFAFA;
+    border-radius: 8px;
+    z-index: 2;
+}
+
+.btn-form-group:hover .btn-main {
+    transform: translate(2px, 2px);
+}
+
+/* =================================
+   DEKORASI (ABSOLUTE POSITIONING)
+   ================================== */
+.decor-img {
+    position: absolute;
+    pointer-events: none; /* Agar tidak menghalangi klik input */
+}
+
+.balon-kiri {
+    width: 100px;
+    left: 5%;
+    bottom: 10%;
+}
+
+.balon-kanan {
+    width: 130px;
+    right: 15%;
+    top: 10%;
+}
+
+.balon-tengah {
+    width: 90px;
+    left: 20%;
+    top: 5%;
+}
+
+.teddy {
+    width: 320px;
+    right: 5%;
+    bottom: -20px;
+    z-index: 1;
+}
+
+/* =================================
+   RESPONSIVE
+   ================================== */
+
+@media screen and (max-width: 1200px) {
+    .teddy { width: 250px; }
+    .balon-kiri { left: 2%; }
+}
+
+@media screen and (max-width: 992px) {
+    .form-lp { padding: 80px 7%; }
+    .teddy { width: 180px; opacity: 0.8; }
+    .balon-tengah { display: none; }
+}
+
+@media screen and (max-width: 768px) {
+    .form-lp h2 { font-size: 1.8rem; }
+    
+    /* Sembunyikan dekorasi di HP agar form bersih */
+    .decor-img {
+        display: none !important;
+    }
+
+    .form-content {
+        max-width: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .form-lp { padding: 50px 5%; }
+    .form-lp h2 { font-size: 1.5rem; }
+    .form-box input { font-size: 1rem; }
+}

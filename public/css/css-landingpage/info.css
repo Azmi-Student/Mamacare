@@ -1,0 +1,162 @@
+/* =================================
+   INFO SECTION GENERAL
+   ================================== */
+.info-section {
+    padding: 80px 10% 120px 10%;
+    background-color: #FF3EA5; /* Background Pink */
+    color: #FAFAFA;
+    position: relative;
+}
+
+/* HEADER INFO */
+.header-info {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 50px auto;
+}
+
+.header-info h2 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.3;
+}
+
+.header-info p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+/* GRID WRAPPER */
+.konten-info-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    padding-top: 20px;
+}
+
+/* KARTU INFO */
+.info-card {
+    background-color: #FAFAFA; /* Kartu Putih */
+    padding: 35px 25px;
+    width: calc(33.333% - 25px); /* 3 Kolom Desktop */
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    z-index: 3;
+}
+
+.info-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.info-card .circular {
+    width: 40px;
+    height: 40px;
+    border: 2px solid #FF3EA5;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.info-card h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #FF3EA5;
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.info-card p {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #555;
+    line-height: 1.5;
+}
+
+/* =================================
+   RESPONSIVE
+   ================================== */
+
+/* Tablet (992px) */
+@media screen and (max-width: 992px) {
+    .info-card {
+        width: calc(50% - 25px); /* 2 Kolom Tablet */
+    }
+    
+    .header-info h2 {
+        font-size: 1.8rem;
+    }
+}
+
+/* Phone (768px ke bawah) */
+@media screen and (max-width: 768px) {
+    .info-section {
+        padding: 60px 7%;
+    }
+
+    .info-card {
+        width: 100%; /* 1 Kolom Full di HP */
+        max-width: 400px;
+    }
+
+    .header-info h2 {
+        font-size: 1.5rem;
+    }
+
+    .header-info p {
+        font-size: 1rem;
+    }
+}
+
+/* Phone Kecil (480px) */
+@media screen and (max-width: 480px) {
+    .info-card {
+        padding: 25px 20px;
+    }
+    
+    .info-card h3 {
+        font-size: 1.1rem;
+    }
+}
+/* Styling Lingkaran */
+.circular {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70px;
+    height: 70px;
+    /* Background pink muda otomatis (versi transparan dari #FF3EA5) */
+    background-color: rgba(255, 62, 165, 0.1); 
+    border-radius: 50%;
+    margin: 0 auto 20px auto;
+    transition: all 0.3s ease;
+}
+
+/* Styling Ikon */
+.circular i {
+    font-size: 30px;
+    /* Warna Ikon sesuai permintaan */
+    color: #FF3EA5; 
+}
+
+/* Efek Hover (Saat kursor diarahkan) */
+.info-card:hover .circular {
+    /* Lingkaran jadi warna pink solid */
+    background-color: #FF3EA5; 
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(255, 62, 165, 0.4);
+}
+
+.info-card:hover .circular i {
+    /* Ikon berubah putih supaya kontras */
+    color: #ffffff; 
+}

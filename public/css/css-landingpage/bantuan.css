@@ -1,0 +1,179 @@
+/* =================================
+   BANTUAN SECTION GENERAL
+   ================================== */
+.bantuan-section {
+    background-color: #FF3EA5;
+    padding: 80px 10%;
+    color: #FAFAFA;
+    position: relative;
+    overflow: hidden;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+}
+
+.bantuan-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    gap: 50px;
+}
+
+/* KIRI - VISUAL STACKING */
+.bantuan-visual {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.image-stack {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+}
+
+.img-base {
+    width: 100%;
+    display: block;
+    position: relative;
+    z-index: 2;
+}
+
+.img-decor-1 {
+    position: absolute;
+    width: 50%;
+    top: -15%;
+    left: -10%;
+    z-index: 3;
+    transform: rotate(-13deg);
+}
+
+.img-decor-2 {
+    position: absolute;
+    width: 55%;
+    top: -25%;
+    right: -5%;
+    z-index: 3;
+}
+
+/* KANAN - CONTENT */
+.bantuan-content {
+    flex: 1;
+}
+
+.bantuan-content h3 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.bantuan-content p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 35px;
+    text-align: justify;
+}
+
+/* BUTTON SYSTEM */
+.btn-group {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.custom-btn-wrapper {
+    position: relative;
+    width: 160px;
+    height: 42px;
+}
+
+.btn-front {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #FAFAFA;
+    color: #FF0099;
+    border: none;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    cursor: pointer;
+    z-index: 5;
+    transition: 0.2s ease;
+}
+
+.btn-shadow {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 100%;
+    height: 100%;
+    background-color: #D10079;
+    border: 2px solid #FAFAFA;
+    border-radius: 6px;
+    z-index: 4;
+}
+
+.custom-btn-wrapper:hover .btn-front {
+    transform: translate(2px, 2px);
+}
+
+/* =================================
+   RESPONSIVE
+   ================================== */
+
+/* Tablet & Mobile (992px ke bawah) */
+@media screen and (max-width: 992px) {
+    .bantuan-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .bantuan-content p {
+        text-align: center;
+    }
+
+    .btn-group {
+        align-items: center;
+    }
+
+    .bantuan-visual {
+        margin-bottom: 50px;
+    }
+}
+
+/* Phone (768px ke bawah) */
+@media screen and (max-width: 768px) {
+    .bantuan-section {
+        padding: 60px 7%;
+    }
+
+    /* Hilangkan pernak-pernik kecil di HP agar tidak sumpek */
+    .img-decor-1, .img-decor-2 {
+        display: none;
+    }
+
+    .image-stack {
+        max-width: 250px;
+    }
+
+    .bantuan-content h3 {
+        font-size: 1.8rem;
+    }
+}
+
+/* Phone Kecil (480px ke bawah) */
+@media screen and (max-width: 480px) {
+    /* Opsional: Hilangkan visual total jika ingin sangat ringkas */
+    .bantuan-visual {
+        display: none;
+    }
+    
+    .bantuan-section {
+        min-height: auto;
+    }
+}

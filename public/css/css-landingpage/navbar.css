@@ -1,0 +1,227 @@
+/* =================================
+   1. NAVBAR GENERAL (DESKTOP DEFAULT)
+   ================================== */
+.container nav {
+    z-index: 1000;
+    height: 70px;
+    display: flex;
+    /* Ubah padding jadi 5% agar lebih lega di laptop */
+    padding: 0 5%;
+    position: sticky;
+    top: 0;
+    align-items: center;
+    background-color: #FF3EA5;
+    transition: 0.3s;
+    /* Efek halus saat resize */
+}
+
+/* LOGO */
+.container nav .nav-logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    z-index: 1002;
+    /* Agar logo tetap bisa diklik di mode HP */
+}
+
+.container nav .nav-logo .logo-img {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+}
+
+.container nav .nav-logo .logo-img img {
+    width: 40px;
+}
+
+.container nav .nav-logo .logo-tag {
+    margin-left: 10px;
+    font-size: 1.3em;
+    font-weight: 700;
+    color: #FAFAFA;
+}
+
+/* MENU WRAPPER (CENTERED) */
+.container nav ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+
+    /* Logic Tengah: */
+    flex: 1;
+    justify-content: center;
+    position: relative;
+
+    gap: 20px;
+}
+
+.container nav ul li a {
+    font-size: 0.85em;
+    font-weight: 600;
+    text-decoration: none;
+    color: #FAFAFA;
+    transition: 0.3s;
+    white-space: nowrap;
+    /* Mencegah teks menu turun baris */
+}
+
+.container nav ul li a:hover {
+    color: #ffd1e8;
+}
+
+/* BUTTONS (LOCKED RIGHT) */
+.nav-btn-mobile {
+    display: flex;
+    gap: 10px;
+    margin-left: 10px;
+
+    /* Kunci di Kanan */
+    position: absolute;
+    right: 0;
+}
+
+.container nav .btn-login,
+.container nav .btn-regist {
+    cursor: pointer;
+    font-size: 0.8em;
+    font-weight: 600;
+    padding: 8px 20px;
+    border-radius: 5px;
+    border: none;
+    transition: 0.3s;
+    white-space: nowrap;
+    /* Mencegah teks tombol turun baris */
+}
+
+.container nav .btn-login {
+    color: #FFFFFF;
+    background-color: #D10079;
+}
+
+.container nav .btn-regist {
+    color: #FF3EA5;
+    background-color: #FAFAFA;
+}
+
+/* HAMBURGER (HIDDEN DEFAULT) */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+    margin-left: auto;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 28px;
+    height: 3px;
+    background-color: white;
+    border-radius: 3px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* =================================
+   2. LAPTOP SCREEN TWEAK (1200px - 993px)
+   Agar menu tidak nabrak tombol di laptop kecil
+   ================================== */
+@media screen and (max-width: 1200px) {
+    .container nav {
+        padding: 0 3%;
+        /* Kurangi padding pinggir */
+    }
+
+    .container nav ul {
+        gap: 15px;
+        /* Rapatkan jarak menu */
+    }
+
+    .container nav ul li a {
+        font-size: 0.75em;
+        /* Kecilkan font sedikit */
+    }
+
+    .container nav .btn-login,
+    .container nav .btn-regist {
+        padding: 8px 15px;
+        /* Kecilkan tombol sedikit */
+    }
+}
+
+/* =================================
+   3. MOBILE & TABLET (Max 992px)
+   ================================== */
+@media screen and (max-width: 992px) {
+    .menu-toggle {
+        display: flex;
+        z-index: 1001;
+    }
+
+    /* Reset Layout Menu untuk Mobile */
+    .container nav ul {
+        position: absolute;
+        top: -1000px;
+        left: 0;
+        flex-direction: column;
+        background-color: #FF3EA5;
+        width: 100%;
+        height: auto;
+        gap: 0;
+        padding: 20px 0;
+        text-align: center;
+        transition: all 0.5s ease;
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+
+        /* PENTING: Reset posisi Flexbox */
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .container nav ul.active {
+        top: 70px;
+    }
+
+    .container nav ul li {
+        width: 100%;
+        padding: 12px 0;
+    }
+
+    .container nav ul li a {
+        font-size: 1.1em;
+        display: block;
+    }
+
+    /* Reset Tombol Masuk/Daftar di Mobile */
+    .nav-btn-mobile {
+        position: static;
+        /* Matikan Absolute Position */
+        flex-direction: column;
+        width: 100%;
+        margin-top: 20px;
+        margin-left: 0;
+        align-items: center;
+    }
+
+    .container nav .btn-login,
+    .container nav .btn-regist {
+        width: 80%;
+        /* Tombol lebar */
+        height: 45px;
+        margin: 5px 0;
+        font-size: 1em;
+    }
+}
+
+/* ANIMASI HAMBURGER JADI (X) */
+.menu-toggle.is-active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.is-active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.menu-toggle.is-active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}

@@ -1,0 +1,158 @@
+/* =================================
+   SECTION TENTANG (DESKTOP)
+   ================================== */
+.tentang {
+    display: flex;
+    padding: 80px 10%;
+    background-color: #FAFAFA;
+    position: relative;
+    overflow: hidden; /* Supaya dekorasi tidak bikin scroll horizontal */
+    min-height: 400px;
+}
+
+/* MENU SIDEBAR */
+.tentang .menu {
+    flex: 0 0 25%;
+    z-index: 10;
+    position: relative;
+}
+
+.tentang .menu h4 {
+    font-size: 1.5em;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #FF3EA5;
+}
+
+.tentang .menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.tentang .menu ul li {
+    margin-bottom: 15px;
+}
+
+.tentang .menu a {
+    font-size: 1em;
+    font-weight: 500;
+    text-decoration: none;
+    color: #FF3EA5;
+    opacity: 0.6;
+    transition: 0.3s;
+}
+
+.tentang .menu a.aktif, 
+.tentang .menu a:hover {
+    opacity: 1;
+    font-weight: 700;
+    padding-left: 5px;
+}
+
+/* KONTEN KANAN */
+.tentang .konten-kanan {
+    flex: 0 0 75%;
+    padding-left: 5%;
+    line-height: 1.8;
+    text-align: justify;
+    color: #555;
+    z-index: 10;
+}
+
+.tentang .konten-kanan .konten {
+    display: none;
+    animation: fadeIn 0.5s ease;
+}
+
+.tentang .konten-kanan .konten.aktif {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* DEKORASI */
+.tentang .pola1 img, 
+.tentang .love-spin1 img {
+    position: absolute;
+    pointer-events: none; /* Supaya tidak menghalangi klik menu */
+}
+
+.tentang .pola1 img {
+    width: 600px;
+    left: -150px;
+    bottom: -100px;
+    opacity: 0.3;
+}
+
+.tentang .love-spin1 img {
+    width: 400px;
+    right: -100px;
+    top: -50px;
+    opacity: 0.2;
+}
+
+/* =================================
+   RESPONSIVE (MOBILE & TABLET)
+   ================================== */
+
+@media screen and (max-width: 992px) {
+    .tentang {
+        flex-direction: column; /* Menu pindah ke atas */
+        padding: 60px 7%;
+    }
+
+    .tentang .menu {
+        width: 100%;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+
+    .tentang .menu ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .tentang .menu ul li {
+        margin-bottom: 0;
+    }
+
+    .tentang .konten-kanan {
+        width: 100%;
+        padding-left: 0;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .tentang {
+        padding: 40px 5%;
+    }
+
+    .tentang .menu h4 {
+        font-size: 1.3em;
+    }
+
+    .tentang .menu ul {
+        flex-direction: column; /* Menu tumpuk vertikal di HP kecil */
+        gap: 10px;
+    }
+
+    .tentang .menu a {
+        font-size: 0.9em;
+    }
+
+    .tentang .konten-kanan {
+        font-size: 0.95em;
+        line-height: 1.6;
+    }
+
+    /* Sembunyikan dekorasi yang terlalu besar di HP agar tidak mengganggu */
+    .tentang .pola1 img,
+    .tentang .love-spin1 img {
+        width: 200px;
+    }
+}

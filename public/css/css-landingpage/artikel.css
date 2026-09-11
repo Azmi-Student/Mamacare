@@ -1,0 +1,145 @@
+/* =================================
+   ARTIKEL SECTION GENERAL
+   ================================== */
+.artikel-page {
+    padding: 80px 7%;
+    background-color: #FAFAFA;
+    position: relative;
+    overflow: hidden;
+}
+
+/* DEKORASI ATAS */
+.kotak-decor {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+.decor-item {
+    width: 100px;
+    position: absolute;
+    opacity: 0.8;
+}
+
+/* Posisi spesifik decor desktop */
+.d1 { top: -20px; left: 20px; }
+.d2 { top: 10px; left: 140px; }
+.d3 { top: -10px; left: 260px; }
+.d4 { top: 20px; left: 380px; }
+
+.group-right { position: relative; right: 450px; }
+.d5 { top: 20px; }
+.d6 { top: -10px; left: 120px; }
+.d7 { top: 10px; left: 240px; }
+.d8 { top: -20px; left: 360px; }
+
+/* HEADER */
+.header-artikel {
+    text-align: center;
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+
+.header-artikel h2 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #FF3EA5;
+    margin-bottom: 10px;
+}
+
+/* GRID ARTIKEL */
+.artikel-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+}
+
+.card-artikel {
+    background-color: #FFFFFF;
+    border: 2px solid #FF3EA5;
+    border-radius: 15px;
+    width: calc(33.333% - 30px);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.card-artikel:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(255, 62, 165, 0.15);
+}
+
+.img-card { padding: 15px; }
+.img-card img {
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid #FF3EA5;
+}
+
+.tag-artikel {
+    display: flex;
+    align-items: center;
+    background-color: #FF3EA5;
+    margin: 0 15px;
+    padding: 5px 15px;
+    border-radius: 20px;
+    width: fit-content;
+}
+
+.dot-tag { width: 8px; height: 8px; background: white; border-radius: 50%; margin-right: 8px; }
+.tag-artikel img { width: 14px; margin-right: 5px; }
+.tag-artikel p { color: white; font-size: 0.85rem; font-weight: 600; }
+
+.deskripsi-artikel { padding: 20px 15px; text-align: center; flex-grow: 1; }
+.deskripsi-artikel h3 { font-size: 1.1rem; color: #FF3EA5; margin-bottom: 10px; }
+.deskripsi-artikel p { font-size: 0.9rem; color: #555; line-height: 1.5; }
+
+.line { height: 2px; background: #FF3EA5; margin: 0 15px; opacity: 0.3; }
+
+.timestamp { display: flex; align-items: center; padding: 15px; color: #FF3EA5; font-size: 0.85rem; }
+.timestamp img { width: 14px; margin-right: 5px; }
+
+/* BUTTON */
+.footer-action { display: flex; justify-content: center; }
+.btn-selengkapnya {
+    background: #FF3EA5;
+    color: white;
+    border: none;
+    padding: 12px 40px;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* DEKORASI BAWAH */
+.decor-bottom { position: relative; height: 100px; margin-top: 50px; }
+.mama-anak { position: absolute; right: 0; bottom: -20px; width: 250px; transform: scaleX(-1); }
+.fly-love { position: absolute; right: 260px; bottom: 50px; width: 40px; }
+
+/* =================================
+   RESPONSIVE
+   ================================== */
+@media screen and (max-width: 1024px) {
+    .card-artikel { width: calc(50% - 30px); }
+    .kotak-decor { display: none; } /* Hilangkan decor rumit di tablet */
+}
+
+@media screen and (max-width: 768px) {
+    .artikel-page { padding-bottom: 150px; }
+    .card-artikel { width: 100%; max-width: 400px; }
+    .header-artikel h2 { font-size: 1.8rem; }
+    .mama-anak { width: 180px; }
+}
+
+@media screen and (max-width: 480px) {
+    .mama-anak, .fly-love { display: none; } /* Bersihkan mobile total */
+    .header-artikel h2 { font-size: 1.5rem; }
+}
